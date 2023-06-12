@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -29,8 +30,22 @@ public class Wall implements Structure {
 
     @Override
     public List<Block> findBlocksByMaterial(String material) {
-        return null;
+        List<Block> matchingBlocks = new ArrayList<>();
+        findBlocksByMaterialRecursive(blocks, material, matchingBlocks);
+        return matchingBlocks;
     }
+
+    private void findBlocksByMaterialRecursive(List<Block> blocks, String material, List<Block> matchingBlocks) {
+        for (Block block : blocks) {
+            if (block.getMaterial().equals(material)) {
+                matchingBlocks.add(block);
+            }
+            if (block instanceof CompositeBlock) {
+                findBlocksByMaterialRecursive(((CompositeBlock) block).getBlocks(), material, matchingBlocks);
+            }
+        }
+    }
+
 
     @Override
     public int count() {
