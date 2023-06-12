@@ -49,6 +49,17 @@ public class Wall implements Structure {
 
     @Override
     public int count() {
-        return 0;
+        return countBlocksRecursive(blocks);
+    }
+
+    private int countBlocksRecursive(List<Block> blocks) {
+        int count = 0;
+        for (Block block : blocks) {
+            count++;
+            if (block instanceof CompositeBlock) {
+                count += countBlocksRecursive(((CompositeBlock) block).getBlocks());
+            }
+        }
+        return count;
     }
 }
