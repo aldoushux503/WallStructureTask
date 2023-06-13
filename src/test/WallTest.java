@@ -52,9 +52,6 @@ class WallTest {
     void testFindBlocksByMaterial() {
         // Test finding blocks by an existing material
         List<Block> woodBlocks = wall.findBlocksByMaterial("Wood");
-        for (Block woodBlock : woodBlocks) {
-            System.out.println(woodBlock.getColor() + " " + woodBlock.getMaterial());
-        }
         Assertions.assertEquals(2, woodBlocks.size());
 
         // Test finding blocks by a non-existing material
