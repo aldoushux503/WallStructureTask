@@ -7,9 +7,9 @@ This document contains examples of code usage
 
 - [Create individual blocks](#create-individual-blocks)
 - [Create a composite block](#create-a-composite-block)
-- [Create a wall structure](create-a-wall-structure)
-- [Find a block by color](find-a-block-by-color)
-- [Find blocks by material](find-blocks-by-material)
+- [Create a wall structure](#create-a-wall-structure)
+- [Find a block by color](#find-a-block-by-color)
+- [Find blocks by material](#find-blocks-by-material)
 - [Count the total number of blocks in the wall](#count-the-total-number-of-blocks-in-the-wall)
 
 ### Create individual blocks
